@@ -26,6 +26,10 @@ a:visited {
 	color: #f41d00;
 }
 
+#subnav {
+	background:#999;
+}
+
 #subnav .wrap {
 	color: #99999;
 }
@@ -60,14 +64,14 @@ h3 {
     opacity: 0.8;
 }
 
+#footer-widgets {
+	width:auto;
+}
 
 @media only screen and (min-width: 960px) {
 	#wrap,
 	#nav {
 		width: 960px;
 		margin:0 auto;
-	}
-	#subnav {
-		background:#999;
 	}
 }
