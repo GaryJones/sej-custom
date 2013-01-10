@@ -37,17 +37,10 @@ function call_sej_custom_css() {
 }
 add_action( 'wp_head', 'call_sej_custom_css', 739165030 ); /* FYI: it's the estimated population of Europe in 2011 */
 
-function re_reposition_navigation() {
-	remove_action( 'genesis_before', 'genesis_do_nav' );
-	remove_action( 'genesis_after_header', 'genesis_do_subnav' );
-	add_action( 'genesis_after_header', 'genesis_do_nav' );
-	add_action( 'genesis_after_header', 'genesis_do_subnav' );
-
-	remove_action('genesis_comment_form', 'genesis_do_comment_form');
-	add_action('genesis_before_comments', 'genesis_do_comment_form');
-
+function sej_custom_functions() {
+	include('functions.php');
 }
-add_action( 'after_setup_theme', 're_reposition_navigation' );
+add_action( 'after_setup_theme', 'sej_custom_functions' );
 
 function no_reply_on_trackback( $link ) {
 	global $comment;
