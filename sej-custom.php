@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SEJ Customisations
-Plugin URI: http://codeforthepeople.com/?plugin=se-custom
+Plugin URI: http://codeforthepeople.com/?plugin=sej-custom
 Description: A safe way to make changes to the Genesis Magazine child theme. Produced by Code For The People on behalf of Social Europe Journal.
 Author: Simon Dickson
 Version: 2013.01
