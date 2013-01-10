@@ -42,6 +42,10 @@ function re_reposition_navigation() {
 	remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 	add_action( 'genesis_after_header', 'genesis_do_nav' );
 	add_action( 'genesis_after_header', 'genesis_do_subnav' );
+
+	remove_action('genesis_comment_form', 'genesis_do_comment_form');
+	add_action('genesis_before_comments', 'genesis_do_comment_form');
+
 }
 add_action( 'after_setup_theme', 're_reposition_navigation' );
 
@@ -82,5 +86,3 @@ function change_default_feed() {
 	return 'rss2_custom';
 }
 
-remove_action('genesis_comment_form', 'genesis_do_comment_form');
-add_action('genesis_before_comments', 'genesis_do_comment_form');
