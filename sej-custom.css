@@ -68,6 +68,14 @@ h3 {
 	width:auto;
 }
 
+	.flex-direction-nav li .prev {
+		left:0;
+	}
+	
+	.flex-direction-nav li .next {
+		right:0;
+	}
+
 @media only screen and (min-width: 960px) {
 	#wrap,
 	#nav {
