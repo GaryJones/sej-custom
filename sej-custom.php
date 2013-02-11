@@ -37,6 +37,49 @@ function call_sej_custom_css() {
 }
 add_action( 'wp_head', 'call_sej_custom_css', 739165030 ); /* FYI: it's the estimated population of Europe in 2011 */
 
+
+function sej_add_to_home() {
+/*
+ *  Thanks to http://cubiq.org/add-to-home-screen
+ *  Also at https://github.com/cubiq/add-to-homescreen
+ */
+?>
+<link rel="apple-touch-icon" href="<?php echo plugins_url( 'apple-touch-icon.png', __FILE__ ); ?>" />
+<link rel="apple-touch-icon" sizes="72x72" href="<?php echo plugins_url( 'apple-touch-icon-72.png', __FILE__ ); ?>" />
+<link rel="apple-touch-icon" sizes="114x114" href="<?php echo plugins_url( 'apple-touch-icon-114.png', __FILE__ ); ?>" />
+<link rel="apple-touch-icon" sizes="144x144" href="<?php echo plugins_url( 'apple-touch-icon-144.png', __FILE__ ); ?>" />
+<?php if ( is_front_page() ) { ?>
+<script type="text/javascript">
+var addToHomeConfig = {
+	animationIn: 'bubble',
+	animationOut: 'drop',
+	autostart:false,
+	lifespan:10000,
+	expire:2,
+	touchIcon:true,
+	message:'Add Social Europe Journal to your %device home screen. Click on the %icon icon.'
+};
+</script>
+
+<link rel="stylesheet" href="<?php echo plugins_url( 'add2home/add2home.css', __FILE__ ); ?>">
+<script type="application/javascript" src="<?php echo plugins_url( 'add2home/add2home.js', __FILE__ ); ?>"></script>
+
+<script type="text/javascript">
+function loaded () {
+	if ( window.location.hash.match('ios') ) return;
+	addToHome.show();
+	window.location.hash = '#ios';
+}
+window.addEventListener('load', loaded, false);
+</script>
+
+
+<?php
+}
+}
+add_action('wp_head','sej_add_to_home');
+
+
 function sej_custom_functions() {
 	include('functions.php');
 }
