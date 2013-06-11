@@ -71,6 +71,11 @@ h3 {
 	padding-left:18px;
 }
 
+#footer .creds {
+	width:auto;
+	margin-right:18px;
+}
+
 #footer-widgets {
 	width:auto;
 }
