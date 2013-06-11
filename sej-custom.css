@@ -1,5 +1,7 @@
 a,
-a:visited {
+a:visited,
+.magazine-red a,
+.magazine-red a:visited {
 	color: #f41d00;
 }
 
@@ -71,7 +73,7 @@ h3 {
 	.flex-direction-nav li .prev {
 		left:0;
 	}
-	
+
 	.flex-direction-nav li .next {
 		right:0;
 	}
