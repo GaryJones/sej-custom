@@ -66,6 +66,11 @@ h3 {
     opacity: 0.8;
 }
 
+.magazine-red #footer .gototop a {
+	background-image:none;
+	padding-left:18px;
+}
+
 #footer-widgets {
 	width:auto;
 }
