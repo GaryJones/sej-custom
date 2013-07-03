@@ -5,23 +5,29 @@ a:visited,
 	color: #f41d00;
 }
 
-#nav li a:hover,
-#nav li a:active,
-#nav .current_page_item a,
-#nav .current-cat a,
-#nav .current-menu-item a {
+.magazine-red #nav li a:hover,
+.magazine-red #nav li a:active,
+.magazine-red #nav .current_page_item a,
+.magazine-red #nav .current-cat a,
+.magazine-red #nav .current-menu-item a,
+.magazine-red h2 a:hover,
+.magazine-red #footer a:hover {
 	color: #f41d00;
 }
 
-#nav li li a,
-#nav li li a:link,
-#nav li li a:visited {
-	background-color: #f41d00;
+.magazine-red #nav li li a,
+.magazine-red #nav li li a:link,
+.magazine-red #nav li li a:visited {
+	background-color: #000;
+	color:#999;
 }
 
-#nav li li a:hover,
-#nav li li a:active {
-	color: #f41d00;
+.magazine-red #nav li li a:hover,
+.magazine-red #nav li li a:active,
+.magazine-red #subnav li a:hover,
+.magazine-red #subnav li a:hover,
+.magazine-red #subnav li li a:hover {
+	color:#f41d00;
 }
 
 #nav li.right a:hover {
@@ -33,7 +39,7 @@ a:visited,
 }
 
 #subnav .wrap {
-	color: #99999;
+	color: #999;
 }
 
 #subnav li li a,
