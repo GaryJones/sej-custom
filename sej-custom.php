@@ -122,3 +122,21 @@ function change_default_feed() {
 	return 'rss2_custom';
 }
 
+add_filter( 'sidebars_widgets', 'cftp_randomise_widgets' );
+function cftp_randomise_widgets( array $sidebars_widgets ) {
+	if ( is_admin() ) {
+		return $sidebars_widgets;
+	}
+	global $wp_registered_widgets;
+	$primary = $sidebars_widgets['sidebar'];
+	if ( in_array('text-25',$primary) && in_array('text-16',$primary) ) {
+		$h = date('g');
+		if ($h&1) {
+			$primary[ array_search('text-16',$primary) ] = 'text-25';
+			$primary[ array_search('text-25',$primary) ] = 'text-16';
+		}
+
+	}
+	$sidebars_widgets['sidebar'] = $primary;
+	return $sidebars_widgets;
+}
