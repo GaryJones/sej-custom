@@ -122,6 +122,7 @@ function change_default_feed() {
 	return 'rss2_custom';
 }
 
+/*
 add_filter( 'sidebars_widgets', 'cftp_randomise_widgets' );
 function cftp_randomise_widgets( array $sidebars_widgets ) {
 	if ( is_admin() ) {
@@ -139,4 +140,20 @@ function cftp_randomise_widgets( array $sidebars_widgets ) {
 	}
 	$sidebars_widgets['sidebar'] = $primary;
 	return $sidebars_widgets;
+}
+*/
+
+add_filter( 'the_content','no_pullquote_on_mobile' );
+function no_pullquote_on_mobile( $content ) {
+if ( !is_singular() ) { return $content; }
+$html = '
+<script type="text/javascript">
+//<![CDATA[
+if ( jQuery(window).width() < 500) {
+	jQuery(".entry-content .pullquote").removeClass("pullquote");
+}
+//]]>
+</script>
+';
+return $content . $html;
 }
